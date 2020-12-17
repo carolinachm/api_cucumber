@@ -4,7 +4,7 @@
 Funcionalida: Teste de api
 
 Cenario: Buscar usuarios
-    Dado Eu executo o metodo GET
+    Dado Eu execute o metodo GET
     Entao Eu devo ver os nome dos usuarios
 
 

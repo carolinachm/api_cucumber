@@ -3,8 +3,6 @@ package paginas;
 import org.json.simple.JSONObject;
 import org.junit.Test;
 
-import io.restassured.response.Response;
-import io.restassured.response.ResponseOptions;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
@@ -13,8 +11,8 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class RestAssured {
-	
-	private static String url = "https://reqres.in/api/users";
+
+	private String url = "https://reqres.in/api/users";
 
 	@Test
 	public void getPageOneTest(){
@@ -28,12 +26,12 @@ public class RestAssured {
 	}
 
 	@Test
-	public static void getUserTest() {
+	public void getUserTest() {
 		get(url + "/2").then().body("data.id", equalTo(2));
 	}
 
 	@Test
-	public static void postUserTest(){
+	public void postUserTest(){
 		JSONObject requestParams = new JSONObject();
 		requestParams.put("name", "Rafael");
 		requestParams.put("job", "QA");
